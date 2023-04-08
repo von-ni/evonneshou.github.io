@@ -19,6 +19,7 @@ body {
 
 /* NAVIGATION */
 .nav {
+  color: white;
   position: fixed;
   display: flex;
   justify-content: space-between;

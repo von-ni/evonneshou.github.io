@@ -26,34 +26,35 @@ nav.addEventListener('click', function (e) {
 });
 
 // fearture: change meau color as the same as section
-const navColorTracker = function () {
-  const sections = document.querySelectorAll('.section');
-  sections.forEach(element => {
-    function colorSelector() {
-      //console.log(element.id);
-      switch (element.id) {
-        case 'section-2':
-          nav.style.color = '#ea41b7';
-          break;
-        case 'section-3':
-          nav.style.color = '#04a5d3';
-          initSkills();
-          const s = new Slide('skill', 'slider_btn-left', 'slider_btn-right');
-          break;
-        case 'section-4':
-          nav.style.color = '##27bfc8';
-          break;
-        default:
-          nav.style.color = 'white';
-      }
-    }
-    new IntersectionObserver(colorSelector, {
-      root: null,
-      threshold: 0.8,
-    }).observe(element);
-  });
+const sections = document.querySelectorAll('.section');
+function navColorTracker(e) {
+  if (!e[0].isIntersecting) return;
+  switch (e[0].target.id) {
+    case 'section-1':
+      nav.style.color = 'white';
+      break;
+    case 'section-2':
+      nav.style.color = '#ea41b7';
+      break;
+    case 'section-3':
+      nav.style.color = '#04a5d3';
+      initSkills();
+      const s = new Slide('skill', 'slider_btn-left', 'slider_btn-right');
+      break;
+    case 'section-4':
+      nav.style.color = '##27bfc8';
+      break;
+    default:
+      nav.style.color = 'white';
+  }
+}
+const options = {
+  root: null,
+  threshold: 0.8,
 };
-navColorTracker();
+sections.forEach(element =>
+  new IntersectionObserver(navColorTracker, options).observe(element)
+);
 ///////////////////////////////////////
 // SECTION-2: ABOUT
 document.querySelector('.aboutme_tabs').addEventListener('click', function (e) {
