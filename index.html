@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yvonne's Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header>
+      <nav class="nav">
+        <div></div>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="#section-1">HOME</a>
+          </li>
+          <li class="nav_item">
+            <a class="nav_link" href="#section-2">ABOUT</a>
+          </li>
+          <li class="nav_item">
+            <a class="nav_link" href="#section-3">SKILLS</a>
+          </li>
+          <li class="nav_item">
+            <a class="nav_link" href="#section-4">PROJECTS</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Home -->
+    <section class="section" id="section-1">
+      <h1>Hello!</h1>
+      <h4>I am Yvonne Shou. A self-taught web enginner.</h4>
+    </section>
+    <!-- About -->
+    <section class="section" id="section-2">
+      <div class="section_title">
+        <h2 class="section_description">ABOUT ME</h2>
+      </div>
+      <div class="aboutme">
+        <div class="aboutme_tabs">
+          <button class="about_tab about_tab-1 about_tab-active" data-tab="1">
+            Eduction Background
+          </button>
+          <button class="about_tab about_tab-2" data-tab="2">
+            Work Experience
+          </button>
+          <button class="about_tab about_tab-3" data-tab="3">Lifestyle</button>
+        </div>
+        <div class="about_content about_content-1 about_content-active">
+          <p>
+            I earned my Bachelor's Degree in Mathematics from University of
+            Waterloo. The area of expertise lies in Statistics and Applied
+            Mathematics with a specialization in Scientific Computation.
+          </p>
+        </div>
+        <div class="about_content about_content-2">
+          <div class="works">
+            <div class="work">
+              <div class="work_employee">Imagination</div>
+              <div class="work_title">
+                <em>Freelancer</em>
+                <span class="work_period"><em>July 2021 - Nov 2022</em></span>
+              </div>
+            </div>
+            <div class="work">
+              <div class="work_employee">
+                Kai Deng Law Professional Corporation
+              </div>
+              <div class="work_title">
+                <em>Legal Assistant</em>
+                <span class="work_period"><em>Nov 2020 - May 2021</em></span>
+              </div>
+            </div>
+            <div class="work">
+              <div class="work_employee">Coach</div>
+              <div class="work_title">
+                <em>Sale Associate</em
+                ><span class="work_period"><em>Nov 2018 – May 2019</em></span>
+              </div>
+            </div>
+            <div class="work">
+              <div class="work_employee">Trust Plus (Canada) Group</div>
+              <div class="work_title">
+                <em>Immigration Specialist</em
+                ><span class="work_period"><em>Feb 2016 - Dec 2017</em></span>
+              </div>
+            </div>
+            <div class="work">
+              <div class="work_employee">Victoriana Imports</div>
+              <div class="work_title">
+                <em>Bookkeeper and Administrative Assistant</em
+                ><span class="work_period"><em>Oct 2014 - Feb 2016</em></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about_content about_content-3">
+          <p>
+            When not staring at computer screen, I enjoy playing badminton and
+            boxing. Snowboarding has always been the thing I expected the most
+            during the year. Besides that, the most desired thing to do is
+            definately be dinking MORNING COFFEE!
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Skills -->
+    <section class="section" id="section-3">
+      <div class="section_title">
+        <h2 class="section_description">SKILLS</h2>
+        <h3>
+          After two-years of self-education focus on how to being a software
+          developer enginner, I am well-equipped to face the challenges of the
+          modern world.
+        </h3>
+      </div>
+      <div class="slider">
+        <div class="slide">
+          <div class="skill">
+            <div class="progress">
+              <canvas class="progress_arc"></canvas>
+              <div class="progress_percentage">%</div>
+              <div class="progress_name">JavaScript</div>
+            </div>
+          </div>
+        </div>
+        <div class="slider_btns">
+          <button class="slider_btn slider_btn-left">&larr;</button>
+          <button class="slider_btn slider_btn-right">&rarr;</button>
+        </div>
+      </div>
+    </section>
+    <!-- Projects -->
+    <section class="section" id="section-4">
+      <div class="section_title">
+        <h2 class="section_description">PROJECTS</h2>
+        <h3>Here is the amazing works I done so far.</h3>
+      </div>
+      <div class="projects">
+        <a href="https://memorialofryuichisakamoto.netlify.app" target="_blank">
+          <div class="project a">
+            <div>
+              <img src="img/img-04-Tribute-Page .png" />
+            </div>
+            <div class="hover-container">
+              <div class="project-name">Tribute Page</div>
+              <div class="project-brief">
+                A static page in memory of Ryuichi Sakamoto with funeral music
+                in the background of his choice.
+              </div>
+            </div>
+          </div></a
+        >
+        <div class="project"></div>
+      </div>
+    </section>
+
+    <footer></footer>
+  </body>
+</html>
