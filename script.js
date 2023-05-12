@@ -1,75 +1,76 @@
-'use strict';
+"use strict";
 
 ///////////////////////////////////////
 // NAV
-const nav = document.querySelector('.nav_links');
+const nav = document.querySelector(".nav_links");
 
 // feature: fade when mouse moving in
 const handleHover = function (e) {
-  if (e.target.classList.contains('nav_link')) {
+  if (e.target.classList.contains("nav_link")) {
     const target = e.target;
-    const siblings = target.closest('.nav_links').querySelectorAll('.nav_link');
-    siblings.forEach(el => {
+    const siblings = target.closest(".nav_links").querySelectorAll(".nav_link");
+    siblings.forEach((el) => {
       if (el !== target) el.style.opacity = this;
     });
   }
 };
-nav.addEventListener('mouseover', handleHover.bind(0.5));
-nav.addEventListener('mouseout', handleHover.bind(1));
+nav.addEventListener("mouseover", handleHover.bind(0.5));
+nav.addEventListener("mouseout", handleHover.bind(1));
 // feature: click to move to the desired loc
-nav.addEventListener('click', function (e) {
+nav.addEventListener("click", function (e) {
   e.preventDefault();
-  if (e.target.classList.contains('nav_link')) {
-    const id = e.target.getAttribute('href');
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  if (e.target.classList.contains("nav_link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
 
 // fearture: change meau color as the same as section
-const sections = document.querySelectorAll('.section');
+const sections = document.querySelectorAll(".section");
 function navColorTracker(e) {
+  console.log(e[0].target.id);
   if (!e[0].isIntersecting) return;
   switch (e[0].target.id) {
-    case 'section-1':
-      nav.style.color = 'white';
+    case "section-1":
+      nav.style.color = "white";
       break;
-    case 'section-2':
-      nav.style.color = '#ea41b7';
+    case "section-2":
+      nav.style.color = "#ea41b7";
       break;
-    case 'section-3':
-      nav.style.color = '#04a5d3';
+    case "section-3":
+      nav.style.color = "#04a5d3";
       initSkills();
-      const s = new Slide('skill', 'slider_btn-left', 'slider_btn-right');
+      const s = new Slide("skill", "slider_btn-left", "slider_btn-right");
       break;
-    case 'section-4':
-      nav.style.color = '##27bfc8';
+    case "section-4":
+      nav.style.color = "#27bfc8";
       break;
     default:
-      nav.style.color = 'white';
+      nav.style.color = "white";
   }
 }
 const options = {
   root: null,
   threshold: 0.8,
 };
-sections.forEach(element =>
+sections.forEach((element) =>
   new IntersectionObserver(navColorTracker, options).observe(element)
 );
 ///////////////////////////////////////
 // SECTION-2: ABOUT
-document.querySelector('.aboutme_tabs').addEventListener('click', function (e) {
-  if (!e.target.classList.contains('about_tab')) return;
+document.querySelector(".aboutme_tabs").addEventListener("click", function (e) {
+  if (!e.target.classList.contains("about_tab")) return;
   console.log(e.target);
   document
-    .querySelectorAll('.about_tab')
-    .forEach(t => t.classList.remove('about_tab-active'));
-  e.target.classList.add('about_tab-active');
+    .querySelectorAll(".about_tab")
+    .forEach((t) => t.classList.remove("about_tab-active"));
+  e.target.classList.add("about_tab-active");
   document
-    .querySelectorAll('.about_content')
-    .forEach(c => c.classList.remove('about_content-active'));
+    .querySelectorAll(".about_content")
+    .forEach((c) => c.classList.remove("about_content-active"));
   document
     .querySelector(`.about_content-${e.target.dataset.tab}`)
-    .classList.add('about_content-active');
+    .classList.add("about_content-active");
 });
 
 ///////////////////////////////////////
@@ -83,7 +84,7 @@ class ProcessCircle {
   fontSize = 50;
   constructor(canvas, percent) {
     //this.canvas = document.querySelector(canvas);
-    this.ctx = canvas.getContext('2d');
+    this.ctx = canvas.getContext("2d");
     this.circleX = canvas.width / 2;
     this.circleY = canvas.height / 2;
     this.percent = percent;
@@ -92,15 +93,15 @@ class ProcessCircle {
   _circleUnder() {
     this.ctx.beginPath();
     this.ctx.lineWidth = this.lineWidth;
-    this.ctx.strokeStyle = 'rgb(146, 135, 135)';
+    this.ctx.strokeStyle = "rgb(146, 135, 135)";
     this.ctx.arc(this.circleX, this.circleY, this.radius, 0, 2 * Math.PI);
     this.ctx.stroke();
   }
   _circleProgress(endPosition) {
     this.ctx.beginPath();
     this.ctx.lineWidth = this.lineWidth;
-    this.ctx.strokeStyle = '#04a5d3';
-    this.ctx.lineCap = 'round';
+    this.ctx.strokeStyle = "#04a5d3";
+    this.ctx.lineCap = "round";
     this.ctx.arc(
       this.circleX,
       this.circleY,
@@ -130,23 +131,24 @@ class ProcessCircle {
 }
 // LOADING SKILLS
 const skillsName = [
-  'Java',
-  'JavaScript',
-  'HTML',
-  'CSS',
-  'SQL',
-  'GIT',
-  'Python',
-  'R',
-  'Matlab',
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "MongoDB",
+  "SQL",
+  "GIT",
+  "Python",
+  "R",
+  "Matlab",
+  "Java",
 ];
-const skillsPercent = [70, 85, 85, 85, 60, 60, 90, 60, 50, 50];
-const containerSlide = document.querySelector('.slide');
+const skillsPercent = [85, 85, 85, 85, 60, 60, 90, 60, 50, 50, 70];
+const containerSlide = document.querySelector(".slide");
 function initSkills() {
-  containerSlide.innerHTML = '';
+  containerSlide.innerHTML = "";
   skillsName.forEach((item, i) => {
     containerSlide.insertAdjacentHTML(
-      'beforeend',
+      "beforeend",
       `
             <div class="skill">
                 <div class="progress">
@@ -157,7 +159,7 @@ function initSkills() {
        `
     );
   });
-  document.querySelectorAll('.progress_arc').forEach(element => {
+  document.querySelectorAll(".progress_arc").forEach((element) => {
     const percent = Number.parseInt(element.nextElementSibling.dataset.percent);
     const c = new ProcessCircle(element, percent);
   });
@@ -171,8 +173,8 @@ class Slide {
     this.btnLeft = document.querySelector(`.${btnLeft}`);
     this.btnRight = document.querySelector(`.${btnRight}`);
     this._goToSlide(this.curSlide);
-    this.btnRight.addEventListener('click', this._nextSlide.bind(this));
-    this.btnLeft.addEventListener('click', this._prevSlide.bind(this));
+    this.btnRight.addEventListener("click", this._nextSlide.bind(this));
+    this.btnLeft.addEventListener("click", this._prevSlide.bind(this));
   }
   get maxSlide() {
     return this.slides.length;
