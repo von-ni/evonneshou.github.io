@@ -52,7 +52,7 @@ body {
 
 /* GENERAL ELEMENTS */
 .section {
-  overflow: wrap;
+  overflow: scroll;
   padding: 15rem 3rem;
   height: 100vh;
   border-top: 1px solid #ddd;

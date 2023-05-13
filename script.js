@@ -28,7 +28,6 @@ nav.addEventListener("click", function (e) {
 // fearture: change meau color as the same as section
 const sections = document.querySelectorAll(".section");
 function navColorTracker(e) {
-  console.log(e[0].target.id);
   if (!e[0].isIntersecting) return;
   switch (e[0].target.id) {
     case "section-1":
